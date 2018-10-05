@@ -26,7 +26,7 @@ def populate_sentiment():
             continue
         text = compound_article[paper]["Text"]
         compound_article[paper]["Sentiment"] = sentiment(text)
-    
+
     with open("popular", "wb") as f:
         import pickle
         pickle.dump(compound_article, f)
@@ -35,7 +35,7 @@ def display_results():
 
 
     compound_article = load_article("popular")
-    
+
     print("In newspaper %s, the title of the news article is %s, and the sentiment is %s" % (compound_article["Newspaper"], compound_article["Title"], compound_article["Sentiment"]))
     for paper in Papers:
         if paper == compound_article["Newspaper"]:
@@ -45,6 +45,6 @@ def display_results():
         print("In newspaper %s, the title of the news article is %s, and the sentiment is %s" % (paper, compound_article[paper]["Title"], compound_article[paper]["Sentiment"]))
 
 
-        
+
 
 

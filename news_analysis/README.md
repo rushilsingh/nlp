@@ -1,3 +1,8 @@
+Execute the following command in the current directory:
+python menu.py
+
+This will take you to a menu where you can select one of the options repeatedly until you choose to exit.
+
 Applying NLP to Online News Articles
 
 1. Collecting data:
