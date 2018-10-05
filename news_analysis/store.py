@@ -23,10 +23,10 @@ def store_data(fname, data):
     import pickle
     with open(fname, "wb") as f:
         pickle.dump(data, f)
-      
+
 
 def store_news_data():
-    
+
     articles = build_articles()
     store_data("data", articles)
 

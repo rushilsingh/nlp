@@ -8,14 +8,13 @@ class Newspaper(object):
 
     def __init__(self, url, restrict=[], discard=[], include=[]):
 
-        self.title = "Newspaper" 
+        self.title = "Newspaper"
 
         self.discard = discard
         self.restrict = restrict
         self.include = include
         self.url = url
         self.alt_url = self.flip(url)
-        
 
         data = requests.get(url).text
         soup = BeautifulSoup(data, 'html.parser')
@@ -36,7 +35,7 @@ class Newspaper(object):
         VISITED.append(self.alt_url)
 
     def flip(self, url):
-        if type(url) is not str: 
+        if type(url) is not str:
             return url
         if url.startswith("https"):
             flipped = url.replace("https", "http", 1)
@@ -96,7 +95,7 @@ class Newspaper(object):
             if not self.links: break
 
     def parse_articles(self, articles):
-        
+
         from newspaper import Article
 
         article_list = []
@@ -152,7 +151,7 @@ class TheHindu(Newspaper):
 
 
     def is_valid(self, link):
-       
+
         check = super(TheHindu, self).is_valid(link)
         if not check:
             return False
@@ -208,7 +207,7 @@ class TheWire(Newspaper):
 class IndiaToday(Newspaper):
 
     def __init__(self):
-        super(IndiaToday, self).__init__("https://www.indiatoday.in/", 
+        super(IndiaToday, self).__init__("https://www.indiatoday.in/",
                                          discard=["https://www.indiatoday.in/video",
                                                   "https://www.indiatoday.in/photo",
                                                   "https://www.indiatoday.in/programme",
@@ -232,6 +231,3 @@ class IndiaToday(Newspaper):
                 link = link.get('href')
                 if self.is_valid(link):
                     self.links.append(link)
-
-
-

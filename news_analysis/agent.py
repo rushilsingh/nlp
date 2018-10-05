@@ -21,13 +21,3 @@ class Agent:
             self.articles[paper.title] = paper.parse_articles(paper.articles)
 
 
-
-        
-
-
-      
-            
-
-    
-
-
