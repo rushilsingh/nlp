@@ -1,4 +1,4 @@
-from store import store_news_data 
+from store import store_news_data
 from popular import determine_popular_article, populate_counts
 from sentiment import display_results, populate_sentiment
 import nltk
@@ -23,10 +23,10 @@ def main():
             choice = int(choice)
         except:
             choice = -1
-        if choice == 1: 
+        if choice == 1:
             print("This will take several minutes")
             store_news_data()
-        elif choice == 2: 
+        elif choice == 2:
             determine_popular_article()
         elif choice == 3:
             print("This may take several minutes")
