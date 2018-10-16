@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 VISITED = []
 
+
 class Newspaper(object):
 
     def __init__(self, url, restrict=[], discard=[], include=[]):
@@ -35,6 +36,7 @@ class Newspaper(object):
         VISITED.append(self.alt_url)
 
     def flip(self, url):
+
         if type(url) is not str:
             return url
         if url.startswith("https"):
@@ -43,7 +45,6 @@ class Newspaper(object):
             flipped = url.replace("http", "https", 1)
 
         return flipped
-
 
     def is_valid(self, link):
 
@@ -70,7 +71,6 @@ class Newspaper(object):
                 if check:
                     return True
         return False
-
 
     def step(self):
         if not self.links:
@@ -149,7 +149,6 @@ class TheHindu(Newspaper):
                     if self.is_valid(link):
                         self.links.append(link)
 
-
     def is_valid(self, link):
 
         check = super(TheHindu, self).is_valid(link)
@@ -164,6 +163,7 @@ class TheHindu(Newspaper):
                 if number>1:
                     return False
         return True
+
 
 class TOI(Newspaper):
 
@@ -185,6 +185,7 @@ class TOI(Newspaper):
                 if self.is_valid(link):
                     self.links.append(link)
 
+
 class TheWire(Newspaper):
 
     def __init__(self):
@@ -203,6 +204,7 @@ class TheWire(Newspaper):
                 link = link.get('href')
                 if self.is_valid(link):
                     self.links.append(link)
+
 
 class IndiaToday(Newspaper):
 

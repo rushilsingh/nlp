@@ -2,7 +2,6 @@ from newspapers import TheHindu, TOI, TheWire, IndiaToday
 import nltk
 
 
-
 class Agent:
 
     def __init__(self):
@@ -19,5 +18,3 @@ class Agent:
 
         for paper in self.papers:
             self.articles[paper.title] = paper.parse_articles(paper.articles)
-
-

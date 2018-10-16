@@ -2,6 +2,7 @@ from agent import Agent
 from similarity import similarity
 import nltk
 
+
 nltk.download('punkt')
 
 
@@ -19,6 +20,7 @@ def build_articles():
         articles[paper.title] = agent.articles[paper.title]
     return articles
 
+
 def store_data(fname, data):
     import pickle
     with open(fname, "wb") as f:
@@ -30,14 +32,14 @@ def store_news_data():
     articles = build_articles()
     store_data("data", articles)
 
+
 def load_news_articles():
     articles = load_data("data")
     return articles
+
 
 def load_data(fname):
     import pickle
     with open(fname, "rb") as f:
         data = pickle.load(f)
     return data
-
-

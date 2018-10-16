@@ -5,8 +5,6 @@ import nltk
 nltk.download('punkt')
 
 
-
-
 def main():
     while True:
 
@@ -41,6 +39,7 @@ def main():
             break
         else:
             print("Invalid choice. Please try again by selecting a number.")
+
 
 if __name__ == '__main__':
     main()

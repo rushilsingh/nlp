@@ -2,10 +2,13 @@ from similarity import similarity
 import nltk
 from store import load_news_articles
 
+
 THRESHOLD = 0.4
+
 
 def same(a1,a2):
     return similarity(a1["Text"], a2["Text"]) > 0.4
+
 
 def same_pairs(list1, list2):
     pairs = []
@@ -28,7 +31,6 @@ def same_pairs(list1, list2):
 
 def populate_counts():
 
-
     articles = load_news_articles()
     for paper, article_list in articles.items():
             for article in article_list:
@@ -50,11 +52,13 @@ def populate_counts():
     with open("counted", "wb") as f:
         pickle.dump(counted_articles, f)
 
+
 def load_counted_articles():
         import pickle
         with open("counted", "rb") as f:
             articles = pickle.load(f)
         return articles
+
 
 def popular():
 
@@ -70,6 +74,7 @@ def popular():
     with open("popular", "wb") as f:
             pickle.dump(popular, f)
     return popular
+
 
 def determine_popular_article():
     import time
