@@ -1,8 +1,9 @@
 import re
 import string
 
-def count_clusters(filename, length):    
-    
+
+def count_clusters(filename, length):
+
     regex = re.compile('[%s]' % re.escape(string.punctuation))
 
     with open(filename) as f:
