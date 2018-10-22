@@ -4,6 +4,10 @@ import string
 
 def count_clusters(filename, length):
 
+    if length <= 0:
+        print "length must be at least 1"
+        return {}
+
     regex = re.compile('[%s]' % re.escape(string.punctuation))
 
     with open(filename) as f:
@@ -16,7 +20,6 @@ def count_clusters(filename, length):
     word_map = {}
     for i in range(length):
         word_map[i] = words[i:]
-    print(word_map[1]);
 
     current_cluster = []
     for index, word in enumerate(words):
@@ -34,3 +37,15 @@ def count_clusters(filename, length):
                 counts[current_string] = 1
 
     return counts
+
+def main():
+    from sys import argv
+    filename = argv[1]
+    length = int(argv[2])
+
+    counts = count_clusters(filename, length)
+    print counts
+
+if __name__ == '__main__':
+    main()
+
