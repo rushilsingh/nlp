@@ -10,7 +10,6 @@ clean:
 	rm -rf env
 
 prepare-venv:
-	sudo apt-get install python3-pip
-	sudo pip3 install virtualenv
-	virtualenv $(VENV)
+	virtualenv -p /usr/bin/python3.6 $(VENV) --no-pip
+	$(VENV)/bin/easy_install pip==19.1
 	$(PIP) install -r requirements.txt
