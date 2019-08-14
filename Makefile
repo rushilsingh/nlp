@@ -10,6 +10,6 @@ clean:
 	rm -rf env
 
 prepare-venv:
-	virtualenv -p /usr/bin/python3.6 $(VENV) --no-pip
-	$(VENV)/bin/easy_install pip==19.1
+	pip install virtualenv
+	virtualenv $(VENV)
 	$(PIP) install -r requirements.txt

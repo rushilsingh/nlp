@@ -4,3 +4,6 @@ make prepare-venv
 
 Afterwards, source the virtual environment:
 source env/bin/activate
+
+Lastly, launch the agent menu by running the following command:
+python menu.py
