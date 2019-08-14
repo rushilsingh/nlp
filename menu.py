@@ -2,8 +2,7 @@ from store import store_news_data
 from popular import determine_popular_article, populate_counts
 from sentiment import display_results, populate_sentiment
 import nltk
-nltk.data.path.append('./nltk_data/')
-nltk.download('punkt', './nltk_data/')
+nltk.download('punkt')
 
 
 def main():
