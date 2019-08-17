@@ -10,4 +10,4 @@ def report(request):
     return render(request, 'report.html', {'data': {}})
 
 def results(request):
-    return render(request, 'report.html', {'data': {}})
+    return render(request, 'results.html', {'data': {}})
