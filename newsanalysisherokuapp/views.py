@@ -8,3 +8,6 @@ def index(request):
 
 def report(request):
     return render(request, 'report.html', {'data': {}})
+
+def results(request):
+    return render(request, 'report.html', {'data': {}})
