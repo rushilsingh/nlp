@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<ul>
+<li><p>Applying NLP to Online News Articles</p></li>
+
+<li><p>Collecting data:</p></li>
+</ul>
+
+<p>Data was gather by crawling and scraping several online news portals (The Hindu,</p>
+
+<p>TOI etc.). Links were followed, proceeding only if the newly mined link was novel</p>
+
+<p>and met certain criteria (for example: chiefly sections focusing on national and</p>
+
+<p>international news were included in the search)</p>
+
+<p>Data was retrieved from links identified as being news articles (patterns were</p>
+
+<p>identified during a preliminary investigation that indicated that the link contained a</p>
+
+<p>news article). The article was parsed into a python dictionary.</p>
+
+<ul>
+<li>Judging popularity:</li>
+</ul>
+
+<p>Used similarity to build up counts for each article. The minimum</p>
+
+<p>was 0 and the maximum was 3, 1 for each portal(not counting source portal).</p>
+
+<p>The method used was cosine-similarity. Used a threshold of 0.4. Arrived at that</p>
+
+<p>number through trial and error, playing around with the texts and judging the results</p>
+
+<p>subjectively. Found that a score of 0.4 was an optimal point because it usually</p>
+
+<p>identified two articles on the same subject to be related (and hence, a part of the same</p>
+
+<p>news story) but did not lead to many false positives. </p>
+
+<ul>
+<li>Judging positive/negative valence</li>
+</ul>
+
+<p>A Naive Bayes Classifier was used to judge whether a news story is negative or</p>
+
+<p>positive. A data set consisting of labeled (negative/positive) movie reviews was used</p>
+
+<p>as training data.</p>
+{% endblock %}
