@@ -1,3 +1,5 @@
+### How to run:
+
 - Execute the following commands to prepare a clean environment:
 ```
 make clean
@@ -15,6 +17,8 @@ source env/bin/activate
 ```
 python menu.py
 ```
+
+### Development Report 
 
 - Applying NLP to Online News Articles
 
