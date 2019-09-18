@@ -30,7 +30,7 @@ lxml==4.2.4
 MarkupSafe==1.1.1
 more-itertools==5.0.0
 newspaper3k==0.2.6
-nltk==3.3
+nltk==3.4.5
 numpy==1.15.0
 packaging==19.0
 pathlib2==2.3.4
